@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="UTF-8">
+      <title>Game Engine</title>
+      <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+      <style>
+        html, body {
+          margin: 0;
+          padding: 0;
+        }
+        canvas {
+          max-width: 1280px;
+          max-height: 720px;
+          overflow: hidden;
+          background: black;
+          position: relative;
+        }
+      </style>
+  </head>
+  <body style="background: white;">
+    <div>Static GUI</div>
+    <canvas id="TileMap2D" width="1280px" height="720px"></canvas>
+  </body>
+  <script src="../../lib/framework.js"></script>
+  <script src="../../lib/utilities.js"></script>
+  <script src="../../components/TileMap2D/index.js"></script>
+</html>
