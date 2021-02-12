@@ -1,6 +1,6 @@
-const { ROOT_FRAME } = require('./config/constants');
-const { registerFrame } = require('./lib/framework');
-const rootFrame = require(`./frames/${ROOT_FRAME}`);
+const { ROOT_CONTEXT } = require('./config/constants');
+const { register } = require('./lib/core');
+const rootFrame = require(`./frames/${ROOT_CONTEXT}`);
 
-registerFrame(Object.values(rootFrame)[0]);
+register(Object.values(rootFrame)[0]);
 

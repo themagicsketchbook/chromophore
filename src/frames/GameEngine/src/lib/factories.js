@@ -7,10 +7,10 @@ const createComponent = (selector, ...methods) => (
 const createCanvas = id => {
   const canvasElement = document.createElement('canvas');
 
-  canvasElement.width = 1280;
-  canvasElement.height = 720;
-  canvasElement.setAttribute('width', canvasElement.width);
-  canvasElement.setAttribute('height', canvasElement.height);
+  canvasElement.width = WINDOW_WIDTH;
+  canvasElement.height = WINDOW_HEIGHT;
+  canvasElement.setAttribute('width', WINDOW_WIDTH_PX);
+  canvasElement.setAttribute('height', WINDOW_HEIGHT_PX);
   canvasElement.setAttribute('id', id);
 
   return canvasElement;
