@@ -72,13 +72,16 @@
   </head>
   <body>
     <div id="Player__0"></div>
-    <canvas id="Terrain__Layer0" width="1280px" height="720px"></canvas>
+    <canvas id="Map__Layer0" width="1280px" height="720px"></canvas>
   </body>
   <script src="../../../../../lib/Core.js"></script>
   <script src="../../config/constants.js"></script>
   <script src="../../lib/Framework.js"></script>
+  <script src="../../components/Base/FixedStage2D/index.js"></script>
+  <script src="../../components/Base/FixedStage3D/index.js"></script>
   <script src="../../components/Base/TileMap2D/index.js"></script>
   <script src="../../components/Base/TileMap3D/index.js"></script>
+  <script src="../../components/Base/FixedStage2DPlayer/index.js"></script>
   <script src="../../components/Base/TileMap2DPlayer/index.js"></script>
   <script src="../../components/Craft/MapScroll/index.js"></script>
   <script src="../../components/Craft/IsometricMap/index.js"></script>
@@ -88,11 +91,12 @@
   <script src="../../components/Craft/TerrainMap/index.js"></script>
   <script src="../../components/Craft/TerrainMapScroll/index.js"></script>
   <script src="../../components/Craft/MapPlayer/index.js"></script>
-  <script src="../../components/Craft/PlatformPlayer/index.js"></script>
+  <script src="../../components/Craft/SideMapPlayer/index.js"></script>
+  <script src="../../components/Craft/StagePlayer/index.js"></script>
   <script defer>
-    const Stage = new MapScroll('#Terrain__Layer0');
+    const Scene = new MapScroll('#Map__Layer0');
     const Player = new MapPlayer('#Player__0');
 
-    register(Stage);
+    register(Scene);
   </script>
 </html>

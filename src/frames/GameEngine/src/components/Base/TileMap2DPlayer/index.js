@@ -42,7 +42,7 @@ class TileMap2DPlayer extends Component {
       return false;
     }
 
-    Stage.setTileData(response.data);
+    Scene.setTileData(response.data);
   }
 
   // Handle mount
@@ -54,35 +54,39 @@ class TileMap2DPlayer extends Component {
   // Handle global keydown
   onKeyDown(event) {
     // Early escape if tile map isAnimating or input is invalid
-    if (Stage.isAnimating() || !event?.key || !KEYS[event.key.toUpperCase()]) {
+    if (Scene.isAnimating() || !event?.code) {
       return;
     }
 
-    // Route key
-    const key = `${event.key}`.toUpperCase();
+    const keyCode = event.code.toUpperCase().replace('KEY', '');
 
-    switch (key) {
+    // Early escape if input is invalid
+    if (!KEYS[keyCode]) {
+      return;
+    }
+
+    switch (keyCode) {
       case KEY_BINDINGS.UP:
         playerY = setPlayerY(playerY - 1);
-        Stage.pan(DIRECTIONS.UP, this.getSetAreaTiles);
+        Scene.pan(DIRECTIONS.UP, this.getSetAreaTiles);
 
         break;
 
         case KEY_BINDINGS.LEFT:
         playerX = setPlayerX(playerX - 1);
-        Stage.pan(DIRECTIONS.LEFT, this.getSetAreaTiles);
+        Scene.pan(DIRECTIONS.LEFT, this.getSetAreaTiles);
 
         break;
 
       case KEY_BINDINGS.DOWN:
         playerY = setPlayerY(playerY + 1);
-        Stage.pan(DIRECTIONS.DOWN, this.getSetAreaTiles);
+        Scene.pan(DIRECTIONS.DOWN, this.getSetAreaTiles);
 
         break;
 
       case KEY_BINDINGS.RIGHT:
         playerX = setPlayerX(playerX + 1);
-        Stage.pan(DIRECTIONS.RIGHT, this.getSetAreaTiles);
+        Scene.pan(DIRECTIONS.RIGHT, this.getSetAreaTiles);
 
         break;
       default:

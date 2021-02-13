@@ -2,10 +2,10 @@
 let [isJumping, setIsJumping] = useState(false);
 
 /*
-  PlatformPlayer
+  SideMapPlayer
 */
 
-class PlatformPlayer extends TileMap2DPlayer {
+class SideMapPlayer extends TileMap2DPlayer {
 
   // Player jump
   jump() {
@@ -15,7 +15,7 @@ class PlatformPlayer extends TileMap2DPlayer {
   // Handle global keydown
   onKeyDown(event) {
     // Early escape if tile map isAnimating or input is invalid
-    if (Stage.isAnimating() || !event?.code) {
+    if (Scene.isAnimating() || !event?.code) {
       return;
     }
 
@@ -30,19 +30,19 @@ class PlatformPlayer extends TileMap2DPlayer {
     switch (keyCode) {
       case KEY_BINDINGS.LEFT:
         playerX = setPlayerX(playerX - 1);
-        Stage.pan(DIRECTIONS.LEFT, this.getSetAreaTiles);
+        Scene.pan(DIRECTIONS.LEFT, this.getSetAreaTiles);
 
         break;
 
       case KEY_BINDINGS.RIGHT:
         playerX = setPlayerX(playerX + 1);
-        Stage.pan(DIRECTIONS.RIGHT, this.getSetAreaTiles);
+        Scene.pan(DIRECTIONS.RIGHT, this.getSetAreaTiles);
 
         break;
 
       case KEY_BINDINGS.JUMP:
         this.jump();
-        Stage.jump();
+        Scene.jump();
 
         break;
       default:
