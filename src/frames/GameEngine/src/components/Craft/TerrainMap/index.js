@@ -2,11 +2,11 @@
 let [mainLightLocation, setMainLightLocation] = useState(0);
 
 /*
-  TerrainScroller
+  TerrainMap
 */
 
-class TerrainScroller extends TileMap3D {
+class TerrainMap extends TileMap3D {
   onRender() {
-    // ...
+
   }
 }

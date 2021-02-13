@@ -6,10 +6,10 @@ let [animationFrame, setAnimationFrame] = useState(1);
 let [direction, setDirection] = useState(false);
 
 /*
-  MapScroller
+  MapScroll
 */
 
-class MapScroller extends TileMap2D {
+class MapScroll extends TileMap2D {
   // Set tiles to render
   setTileData(tileData) {
     tiles = setTiles(tileData);

@@ -62,25 +62,25 @@ class TileMap2DPlayer extends Component {
     const key = `${event.key}`.toUpperCase();
 
     switch (key) {
-      case KEY_BINDINGS[DIRECTIONS.UP]:
+      case KEY_BINDINGS.UP:
         playerY = setPlayerY(playerY - 1);
         Stage.pan(DIRECTIONS.UP, this.getSetAreaTiles);
 
         break;
 
-        case KEY_BINDINGS[DIRECTIONS.LEFT]:
+        case KEY_BINDINGS.LEFT:
         playerX = setPlayerX(playerX - 1);
         Stage.pan(DIRECTIONS.LEFT, this.getSetAreaTiles);
 
         break;
 
-      case KEY_BINDINGS[DIRECTIONS.DOWN]:
+      case KEY_BINDINGS.DOWN:
         playerY = setPlayerY(playerY + 1);
         Stage.pan(DIRECTIONS.DOWN, this.getSetAreaTiles);
 
         break;
 
-      case KEY_BINDINGS[DIRECTIONS.RIGHT]:
+      case KEY_BINDINGS.RIGHT:
         playerX = setPlayerX(playerX + 1);
         Stage.pan(DIRECTIONS.RIGHT, this.getSetAreaTiles);
 
@@ -92,6 +92,6 @@ class TileMap2DPlayer extends Component {
 
   // Handle render
   onRender() {
-    //
+
   }
 }

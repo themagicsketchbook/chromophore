@@ -40,14 +40,16 @@ const KEYS = {
   W: 'W',
   A: 'A',
   S: 'S',
-  D: 'D'
+  D: 'D',
+  SPACE: 'SPACE'
 };
 
 const KEY_BINDINGS = {
   UP: KEYS.W,
   LEFT: KEYS.A,
   DOWN: KEYS.S,
-  RIGHT: KEYS.D
+  RIGHT: KEYS.D,
+  JUMP: KEYS.SPACE
 };
 
 try {
