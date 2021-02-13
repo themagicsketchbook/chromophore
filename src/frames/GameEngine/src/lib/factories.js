@@ -1,8 +1,3 @@
-// Create a component instance
-const createComponent = (selector, ...methods) => (
-  new Component(selector, ...methods)
-);
-
 // Create a canvas element instance
 const createCanvas = id => {
   const canvasElement = document.createElement('canvas');

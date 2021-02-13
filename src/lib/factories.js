@@ -1,9 +1,5 @@
 const { WINDOW_WIDTH, WINDOW_HEIGHT } = require('../config/constants');
 const { BrowserWindow } = require('./electron');
-const { Frame } = require('./framework');
-
-// Create a frame instance
-const createFrame = methods => new Frame(methods);
 
 // Create a browser window instance
 const createWindow = () => (
@@ -22,6 +18,5 @@ const createWindow = () => (
 );
 
 module.exports = {
-  createFrame,
   createWindow
 };

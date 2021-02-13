@@ -1,4 +1,5 @@
-const { createFrame, createWindow } = require('../../lib/factories');
+const { createWindow } = require('../../lib/factories');
+const { Frame } = require('../../lib/framework');
 const { useState } = require('../../../src/lib/core');
 
 const { ROOT_CONTEXT } = require('./src/config/constants');
@@ -9,19 +10,20 @@ const rootFilePath = `${__dirname}/src/pages/${ROOT_CONTEXT}/index.html`;
 // State variables
 let [window, setWindow] = useState();
 
-const GameEngine = createFrame({
-
+class Engine extends Frame {
   // Engine starts
-  onStart: function() {
+  onStart() {
     window = setWindow(createWindow()).loadFile(rootFilePath);
     console.log('Engine started.');
-  },
+  }
 
   // Engine updates
-  onUpdate: function() {
+  onUpdate() {
     console.log('Engine state changed.');
   }
-});
+}
+
+const GameEngine = new Engine();
 
 module.exports = {
   GameEngine

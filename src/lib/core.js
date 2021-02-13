@@ -83,14 +83,14 @@ const unregister = context => {
 */
 
 class Entity {
-  constructor(methods) {
-    if (!methods?.onUpdate) {
+  constructor() {
+    if (!this?.onUpdate) {
       throw new Error('Entity instances must implement a `onUpdate` method');
     }
 
-    for (const method in methods) {
-      if (typeof(methods[method]) === 'function') {
-        this[method] = methods[method].bind(this);
+    for (const key in this) {
+      if (typeof(this[key]) === 'function') {
+        this[key] = this[key].bind(this);
       }
       else {
         console.warn(
