@@ -12,6 +12,3 @@ class SideScroller extends MapScroller {
     console.log('Pan up and back down');
   }
 }
-
-// const Stage = new SideScroller('#SideScroller');
-// register(Stage);

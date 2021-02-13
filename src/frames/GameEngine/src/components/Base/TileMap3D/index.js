@@ -7,6 +7,3 @@ class TileMap3D extends TileMap2D {
     // ...
   }
 }
-
-// const Stage = new TileMap3D('#TileMap3D');
-// register(Stage);

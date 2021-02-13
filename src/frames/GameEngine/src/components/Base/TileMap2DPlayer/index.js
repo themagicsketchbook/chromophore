@@ -95,6 +95,3 @@ class TileMap2DPlayer extends Component {
     //
   }
 }
-
-const Player = new TileMap2DPlayer('#TileMap2DPlayer');
-// register(Player);

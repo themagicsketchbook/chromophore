@@ -91,6 +91,3 @@ class MapScroller extends TileMap2D {
     })
   }
 }
-
-const Stage = new MapScroller('#MapScroller');
-register(Stage);

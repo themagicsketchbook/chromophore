@@ -79,8 +79,14 @@
   <script src="../../lib/Framework.js"></script>
   <script src="../../components/Base/TileMap2D/index.js"></script>
   <script src="../../components/Base/TileMap3D/index.js"></script>
+  <script src="../../components/Base/TileMap2DPlayer/index.js"></script>
   <script src="../../components/Craft/MapScroller/index.js"></script>
   <script src="../../components/Craft/SideScroller/index.js"></script>
   <script src="../../components/Craft/TerrainScroller/index.js"></script>
-  <script defer src="../../components/Base/TileMap2DPlayer/index.js"></script>
+  <script defer>
+    const Stage = new MapScroller('#MapScroller');
+    const Player = new TileMap2DPlayer('#TileMap2DPlayer');
+
+    register(Stage);
+  </script>
 </html>

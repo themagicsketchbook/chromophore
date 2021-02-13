@@ -51,6 +51,3 @@ class TileMap2D extends Component {
     })
   }
 }
-
-// const Stage = new TileMap2D('#TileMap2D');
-// register(Stage);

@@ -10,6 +10,3 @@ class TerrainScroller extends TileMap3D {
     // ...
   }
 }
-
-// const Stage = new TerrainScroller('#TerrainScroller');
-// register(Stage);
