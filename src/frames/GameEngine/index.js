@@ -1,6 +1,5 @@
-const { createWindow } = require('../../lib/factories');
-const { Frame } = require('../../lib/framework');
-const { useState } = require('../../../src/lib/core');
+const { createWindow, Frame } = require('../../lib/Framework');
+const { useState } = require('../../../src/lib/Core');
 
 const { ROOT_CONTEXT } = require('./src/config/constants');
 

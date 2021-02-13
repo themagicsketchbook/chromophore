@@ -1,5 +1,5 @@
-const { NativeWindow, BrowserWindow } = require('./electron');
-const { Entity } = require('./core');
+const { NativeWindow, BrowserWindow } = require('./Electron');
+const { Entity } = require('./Core');
 
 /*
   Frame
@@ -34,6 +34,26 @@ class Frame extends Entity {
   }
 }
 
+const { WINDOW_WIDTH, WINDOW_HEIGHT } = require('../config/constants');
+
+// Create a browser window instance
+const createWindow = () => (
+  new BrowserWindow({
+    darkTheme: true,
+    fullscreen: false,
+    width: WINDOW_WIDTH,
+    height: WINDOW_HEIGHT,
+    webPreferences: {
+      allowRunningInsecureContent: false,
+      contextIsolation: true,
+      nodeIntegration: true
+    },
+    title: 'Tile Engine'
+  })
+);
+
+
 module.exports = {
+  createWindow,
   Frame
 };
