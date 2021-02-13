@@ -50,6 +50,7 @@ const TileMap2D = createComponent(
       if (animationFrame > Math.max(1, (frameRate - 1))) {
         animationFrame = setAnimationFrame(1);
         xOffset = setXOffset(1);
+        yOffset = setXOffset(1);
         frameRate = setFrameRate(1);
 
         return callback();
@@ -78,12 +79,12 @@ const TileMap2D = createComponent(
       tiles.forEach((row, y) => {
         row.forEach((_, x) => {
           // Get tile color
-          context.fillStyle = (
-            TILES[tiles[y + yOffset]
+          context.fillStyle = TILES[(
+            tiles[y + yOffset]
               ? tiles[y + yOffset][x + xOffset]
               : tiles[y][x + xOffset]
-            ]
-          );
+            )
+          ];
 
           // Fill tile
           context.fillRect(
