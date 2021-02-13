@@ -6,7 +6,13 @@ let [playerY, setPlayerY] = useState(10);
   TileMap2DPlayer
 */
 
-class TileMap2DPlayer extends Component {
+class TileMap2DPlayer extends FixedCanvas2DPlayer {
+  constructor(selector) {
+    super(selector);
+
+    this.getSetAreaTiles();
+  }
+
   // Fetch tiles from the API & update tile map
   getSetAreaTiles() {
     const response = api.getTiles(playerX, playerY);
@@ -43,12 +49,6 @@ class TileMap2DPlayer extends Component {
     }
 
     Scene.setTileData(response.data);
-  }
-
-  // Handle mount
-  onMount() {
-    document.body.onkeydown = this.onKeyDown.bind(this);
-    this.getSetAreaTiles();
   }
 
   // Handle global keydown

@@ -10,6 +10,13 @@ const FPS = 60;
 const FPS_MS = 1000 / FPS;
 const SMOOTHNESS = 90;
 
+const COLORS = {
+  BLACK: 'black',
+  GREEN: 'green',
+  BLUE: 'blue',
+  GRAY: 'gray'
+};
+
 const DIRECTIONS = {
   UP: 'UP',
   LEFT: 'LEFT',
@@ -61,6 +68,7 @@ try {
     WINDOW_HEIGHT_PX,
     FPS,
     FPS_MS,
+    COLORS,
     SMOOTHNESS,
     DIRECTIONS,
     TILE_OFFSET,

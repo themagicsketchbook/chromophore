@@ -17,6 +17,15 @@
           background: black;
           position: relative;
         }
+        .FixedCanvas2DPlayer {
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 100px;
+          height: 100px;
+          background: black;
+          transition: top 1s linear, left 1s linear;
+        }
       </style>
       <script>
         const TILE_MAP = [
@@ -71,31 +80,54 @@
       </script>
   </head>
   <body>
+    <!-- Player -->
     <div id="Player__0"></div>
-    <canvas id="Map__Layer0" width="1280px" height="720px"></canvas>
+
+    <!-- Scene -->
+    <canvas id="Layer__0" width="1280px" height="720px"></canvas>
   </body>
+  <!-- Config: Core Library -->
   <script src="../../../../../lib/Core.js"></script>
+
+  <!-- Config: Constants & Framework -->
   <script src="../../config/constants.js"></script>
   <script src="../../lib/Framework.js"></script>
-  <script src="../../components/Base/FixedStage2D/index.js"></script>
-  <script src="../../components/Base/FixedStage3D/index.js"></script>
+
+  <!-- Scene: Fixed Canvas & Tile Map -->
+  <script src="../../components/Base/FixedCanvas2D/index.js"></script>
   <script src="../../components/Base/TileMap2D/index.js"></script>
-  <script src="../../components/Base/TileMap3D/index.js"></script>
-  <script src="../../components/Base/FixedStage2DPlayer/index.js"></script>
-  <script src="../../components/Base/TileMap2DPlayer/index.js"></script>
+
+  <!-- Scene: Fixed Canvas Scrollers -->
+  <script src="../../components/Craft/CanvasScroll/index.js"></script>
+
+  <!-- Scene: Tile Map Scrollers -->
   <script src="../../components/Craft/MapScroll/index.js"></script>
   <script src="../../components/Craft/IsometricMap/index.js"></script>
   <script src="../../components/Craft/IsometricMapScroll/index.js"></script>
   <script src="../../components/Craft/SideMap/index.js"></script>
   <script src="../../components/Craft/SideMapScroll/index.js"></script>
-  <script src="../../components/Craft/TerrainMap/index.js"></script>
-  <script src="../../components/Craft/TerrainMapScroll/index.js"></script>
+
+  <!-- Scene: Stage & Terrain -->
+  <script src="../../components/Craft/Stage/index.js"></script>
+  <script src="../../components/Craft/Terrain/index.js"></script>
+
+  <!-- Scene: Stage & Terrain Scrollers -->
+  <script src="../../components/Craft/StageScroll/index.js"></script>
+  <script src="../../components/Craft/TerrainScroll/index.js"></script>
+
+  <!-- Player: Fixed Canvas & Tile Map -->
+  <script src="../../components/Base/FixedCanvas2DPlayer/index.js"></script>
+  <script src="../../components/Base/TileMap2DPlayer/index.js"></script>
+
+  <!-- Player: Top-Down, Platformer, & Sprite -->
   <script src="../../components/Craft/MapPlayer/index.js"></script>
   <script src="../../components/Craft/SideMapPlayer/index.js"></script>
-  <script src="../../components/Craft/StagePlayer/index.js"></script>
+  <script src="../../components/Craft/CanvasPlayer/index.js"></script>
+
+  <!-- Application: Main -->
   <script defer>
-    const Scene = new MapScroll('#Map__Layer0');
-    const Player = new MapPlayer('#Player__0');
+    const Scene = new FixedCanvas2D('#Layer__0');
+    const Player = new FixedCanvas2DPlayer('#Player__0');
 
     register(Scene);
   </script>

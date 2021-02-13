@@ -2,10 +2,10 @@
 let [mainLightLocation, setMainLightLocation] = useState(0);
 
 /*
-  TerrainMap
+  Terrain
 */
 
-class TerrainMap extends TileMap3D {
+class Terrain extends TileMap2D {
   onRender() {
 
   }

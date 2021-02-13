@@ -1,19 +1,17 @@
 const TILES = [
-  'black',
-  'green',
-  'blue'
+  COLORS.BLACK,
+  COLORS.GREEN,
+  COLORS.BLUE
 ];
 
 // State variables
-let [canvas, setCanvas] = useState();
-let [context, setContext] = useState();
 let [tiles, setTiles] = useState([[]]);
 
 /*
   TileMap2D
 */
 
-class TileMap2D extends Component {
+class TileMap2D extends FixedCanvas2D {
   // Set tiles to render
   setTileData(tileData) {
     tiles = setTiles(tileData);
@@ -22,12 +20,6 @@ class TileMap2D extends Component {
   // Returns calculated tile size
   getTileSize() {
     return canvas.width / 9;
-  }
-
-  // Handle mount
-  onMount() {
-    canvas = setCanvas(this.element);
-    context = setContext(canvas.getContext('2d'));
   }
 
   // Handle render

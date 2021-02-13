@@ -1,8 +1,8 @@
 /*
-  TerrainMapScroll
+  TerrainScroll
 */
 
-class TerrainMapScroll extends MapScroll {
+class TerrainScroll extends MapScroll {
   onRender() {
     console.log(mainLightLocation);
   }

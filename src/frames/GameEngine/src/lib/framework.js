@@ -21,10 +21,6 @@ class Component extends Entity {
     requestAnimationFrame(() => {
       document.body.insertBefore(element, document.body.firstElementChild);
     });
-
-    if (this.onMount) {
-      this.onMount();
-    }
   }
 
   reselect() {
