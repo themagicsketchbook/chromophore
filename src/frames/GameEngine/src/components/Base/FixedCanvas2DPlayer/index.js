@@ -22,11 +22,17 @@ class FixedCanvas2DPlayer extends Component {
   }
 
   getLastX() {
-    return (canvas.width - this.getComputedInt('width')) / 100;
+    return (
+      (canvas.width - this.getComputedInt('width')) /
+      this.getComputedInt('width')
+    );
   }
 
   getLastY() {
-    return (canvas.height - this.getComputedInt('height')) / 100;
+    return (
+      (canvas.height - this.getComputedInt('height')) /
+      this.getComputedInt('height')
+    );
   }
 
   // Handle global keydown
@@ -86,7 +92,12 @@ class FixedCanvas2DPlayer extends Component {
     this.element
       .setAttribute(
         'style',
-        `left: ${stageX * 100}px; top: ${stageY * 100}px;`
+        `\
+          left: ${stageX * this.getComputedInt('width')}px; \
+          top: ${stageY * this.getComputedInt('height')}px; \
+          width: ${canvas.width / 9}px; \
+          height: ${canvas.height / 5}px;\
+        `
       );
   }
 }

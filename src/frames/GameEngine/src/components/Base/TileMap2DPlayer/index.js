@@ -11,6 +11,7 @@ class TileMap2DPlayer extends FixedCanvas2DPlayer {
     super(selector);
 
     this.getSetAreaTiles();
+    this.element.setAttribute('class', 'TileMap2DPlayer');
   }
 
   // Fetch tiles from the API & update tile map

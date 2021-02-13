@@ -9,6 +9,7 @@
           background: black;
           margin: 0;
           padding: 0;
+          overflow: hidden;
         }
         canvas {
           max-width: 1280px;
@@ -23,6 +24,23 @@
           top: 0;
           width: 100px;
           height: 100px;
+          background: black;
+          transition: top 1s linear, left 1s linear;
+        }
+        .TileMap2DPlayer {
+          position: absolute;
+          left: 0;
+          top: 0;
+          background: black;
+          margin-left: 590px;
+          margin-top: 310px;
+        }
+        .StagePlayer {
+          position: absolute;
+          left: 24px;
+          bottom: 24px;
+          width: 128px;
+          height: 192px;
           background: black;
           transition: top 1s linear, left 1s linear;
         }
@@ -124,10 +142,14 @@
   <script src="../../components/Craft/SideMapPlayer/index.js"></script>
   <script src="../../components/Craft/CanvasPlayer/index.js"></script>
 
+  <!-- Player: Stage & Terrain (3D) -->
+  <script src="../../components/Craft/StagePlayer/index.js"></script>
+  <!-- <script src="../../components/Craft/TerrainPlayer/index.js"></script> -->
+
   <!-- Application: Main -->
   <script defer>
-    const Scene = new FixedCanvas2D('#Layer__0');
-    const Player = new FixedCanvas2DPlayer('#Player__0');
+    const Scene = new Stage('#Layer__0');
+    const Player = new StagePlayer('#Player__0');
 
     register(Scene);
   </script>
