@@ -7,11 +7,14 @@ let [context, setContext] = useState();
 */
 
 class FixedCanvas2D extends Component {
-  constructor(selector) {
-    super(selector);
+  constructor(selector, engine) {
+    super(selector, 'canvas');
+
+    this.element.setAttribute('width', WINDOW_WIDTH_PX);
+    this.element.setAttribute('height', WINDOW_HEIGHT_PX);
 
     canvas = setCanvas(this.element);
-    context = setContext(canvas.getContext('2d'));
+    context = setContext(canvas.getContext(engine || '2d'));
   }
 
   // Handle render

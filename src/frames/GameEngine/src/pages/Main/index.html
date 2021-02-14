@@ -6,43 +6,50 @@
       <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
       <style>
         html, body {
-          background: black;
+          width: 100vw;
+          height: 720px;
           margin: 0;
           padding: 0;
+        }
+        html, body, canvas {
+          display: flex;
+          background: black;
           overflow: hidden;
+          align-content: center;
+          justify-content: center;
         }
         canvas {
+          position: relative;
           max-width: 1280px;
           max-height: 720px;
-          overflow: hidden;
-          background: black;
-          position: relative;
+        }
+        #Layer__0,
+        #Player__0 {
+          position: absolute;
+          z-index: 10;
+        }
+        #Player__0 {
+          z-index: 100;
+          background: transparent;
+          border: 1px solid red;
+          transition: top 1s linear, left 1s linear;
         }
         .FixedCanvas2DPlayer {
-          position: absolute;
           left: 0;
           top: 0;
           width: 100px;
           height: 100px;
-          background: black;
-          transition: top 1s linear, left 1s linear;
         }
         .TileMap2DPlayer {
-          position: absolute;
-          left: 0;
-          top: 0;
-          background: black;
-          margin-left: 590px;
-          margin-top: 310px;
+          flex: 1;
+          align-self: center;
+          justify-self: center;
         }
         .StagePlayer {
-          position: absolute;
           left: 24px;
           bottom: 24px;
           width: 128px;
           height: 192px;
-          background: black;
-          transition: top 1s linear, left 1s linear;
         }
       </style>
       <script>
@@ -97,15 +104,14 @@
         };
       </script>
   </head>
-  <body>
-    <!-- Player -->
-    <div id="Player__0"></div>
-
-    <!-- Scene -->
-    <canvas id="Layer__0" width="1280px" height="720px"></canvas>
-  </body>
-  <!-- Config: Core Library -->
+  <body></body>
+  <!-- Core Library -->
   <script src="../../../../../lib/Core.js"></script>
+
+  <!-- Vendor: Three (WebGL) & Cannon (Physics) -->
+  <script src="../../lib/WebGLDetector.js"></script>
+  <script src="../../lib/WebGL.js"></script>
+  <script src="../../lib/Physics.js"></script>
 
   <!-- Config: Constants & Framework -->
   <script src="../../config/constants.js"></script>

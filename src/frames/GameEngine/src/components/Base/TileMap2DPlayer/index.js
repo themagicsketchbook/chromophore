@@ -11,7 +11,11 @@ class TileMap2DPlayer extends FixedCanvas2DPlayer {
     super(selector);
 
     this.getSetAreaTiles();
+
+    const tileSize = `${canvas.width / 10 << 0}px`;
+
     this.element.setAttribute('class', 'TileMap2DPlayer');
+    this.element.setAttribute('style', `width: ${tileSize}; height: ${tileSize};`);
   }
 
   // Fetch tiles from the API & update tile map

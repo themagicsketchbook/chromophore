@@ -9,7 +9,7 @@ let [isMoving, setIsMoving] = useState(false);
 
 class FixedCanvas2DPlayer extends Component {
   constructor(selector) {
-    super(selector);
+    super(selector, 'div');
 
     document.body.onkeydown = this.onKeyDown.bind(this);
     this.element.setAttribute('class', 'FixedCanvas2DPlayer');
