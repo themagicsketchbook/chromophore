@@ -51,6 +51,11 @@
           width: 128px;
           height: 192px;
         }
+        .SideMapPlayer {
+          width: 128px !important;
+          height: 192px !important;
+          top: calc(50% - 96px) !important;
+        }
       </style>
       <script>
         const TILE_MAP = [
@@ -154,8 +159,8 @@
 
   <!-- Application: Main -->
   <script defer>
-    const Scene = new MapScroll('#Layer__0');
-    const Player = new MapPlayer('#Player__0');
+    const Scene = new SideMap('#Layer__0');
+    const Player = new SideMapPlayer('#Player__0');
 
     register(Scene);
   </script>

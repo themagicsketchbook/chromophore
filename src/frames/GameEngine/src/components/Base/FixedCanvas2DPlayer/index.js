@@ -35,7 +35,7 @@ class FixedCanvas2DPlayer extends Component {
     );
   }
 
-  // Handle global keydown
+  // Handle keydown
   onKeyDown(event) {
     // Early escape if tile map isAnimating or input is invalid
     if (!event?.code) {

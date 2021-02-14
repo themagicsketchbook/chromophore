@@ -5,53 +5,61 @@ let [isJumping, setIsJumping] = useState(false);
   SideMapPlayer
 */
 
-class SideMapPlayer extends TileMap2DPlayer {
+class SideMapPlayer extends FixedCanvas2DPlayer {
+  constructor(selector) {
+    super(selector);
+
+    this.element.setAttribute('class', 'SideMapPlayer');
+    this.onRender();
+  }
 
   // Player jump
   jump() {
     console.log('Jump!');
   }
 
-  // Handle global keydown
+  // Handle keydown
   onKeyDown(event) {
     // Early escape if tile map isAnimating or input is invalid
-    if (Scene.isAnimating() || !event?.code) {
+    if (!event?.code) {
       return;
     }
 
     const keyCode = event.code.toUpperCase().replace('KEY', '');
 
-    // Early escape if input is invalid
-    if (!KEYS[keyCode]) {
+    // Early escape if isMoving or input is invalid
+    if (isMoving || !KEYS[keyCode]) {
       return;
     }
 
-    // Route key
     switch (keyCode) {
       case KEY_BINDINGS.LEFT:
-        playerX = setPlayerX(playerX - 1);
-        Scene.pan(DIRECTIONS.LEFT, this.getSetAreaTiles);
+        stageX = setStageX(Math.max(0, stageX - 1));
 
         break;
 
       case KEY_BINDINGS.RIGHT:
-        playerX = setPlayerX(playerX + 1);
-        Scene.pan(DIRECTIONS.RIGHT, this.getSetAreaTiles);
+        stageX = setStageX(
+          Math.min(this.getLastX(), stageX + 1)
+        );
 
         break;
 
       case KEY_BINDINGS.JUMP:
         this.jump();
-        Scene.jump();
 
         break;
+
       default:
         break;
     }
-  }
 
-  // Handle render
-  onRender() {
+    isMoving = setIsMoving(true);
 
+    setTimeout(() => {
+      isMoving = setIsMoving(false);
+    }, 1000);
+
+    this.onRender();
   }
 }

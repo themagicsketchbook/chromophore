@@ -98,9 +98,4 @@ class TileMap2DPlayer extends FixedCanvas2DPlayer {
         break;
     }
   }
-
-  // Handle render
-  onRender() {
-
-  }
 }
