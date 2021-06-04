@@ -4,6 +4,8 @@ const TILES = [
   COLORS.BLUE
 ];
 
+const TILES_PER_ROW = 9;
+
 // State variables
 let [tiles, setTiles] = useState([[]]);
 
@@ -19,7 +21,7 @@ class TileMap2D extends FixedCanvas2D {
 
   // Returns calculated tile size
   getTileSize() {
-    return canvas.width / 9;
+    return canvas.width / TILES_PER_ROW;
   }
 
   // Handle render

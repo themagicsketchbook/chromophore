@@ -8,11 +8,16 @@ let [isMoving, setIsMoving] = useState(false);
 */
 
 class FixedCanvas2DPlayer extends Component {
-  constructor(selector) {
-    super(selector, 'div');
+  constructor(selector, tagName, cssText) {
+    super(selector, tagName, `
+      left: 0;
+      top: 0;
+      width: 100px;
+      height: 100px;
+      ${cssText || ''}
+    `);
 
     document.body.onkeydown = this.onKeyDown.bind(this);
-    this.element.setAttribute('class', 'FixedCanvas2DPlayer');
   }
 
   getComputedInt(prop) {

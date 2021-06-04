@@ -7,15 +7,21 @@ let [playerY, setPlayerY] = useState(10);
 */
 
 class TileMap2DPlayer extends FixedCanvas2DPlayer {
-  constructor(selector) {
-    super(selector);
+  constructor(selector, tagName, cssText) {
+    const tileSizePx = `${canvas.width / 10 << 0}px`;
+
+    super(selector, tagName || 'div', `
+      flex: 1;
+      align-self: center;
+      justify-self: center;
+      width: ${tileSizePx};
+      height: ${tileSizePx};
+      left: auto;
+      top: auto;
+      ${cssText || ''}
+    `);
 
     this.getSetAreaTiles();
-
-    const tileSize = `${canvas.width / 10 << 0}px`;
-
-    this.element.setAttribute('class', 'TileMap2DPlayer');
-    this.element.setAttribute('style', `width: ${tileSize}; height: ${tileSize};`);
   }
 
   // Fetch tiles from the API & update tile map

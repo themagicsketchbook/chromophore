@@ -34,30 +34,11 @@
           border: 1px solid red;
           transition: top 1s linear, left 1s linear;
         }
-        .FixedCanvas2DPlayer {
-          left: 0;
-          top: 0;
-          width: 100px;
-          height: 100px;
-        }
-        .TileMap2DPlayer {
-          flex: 1;
-          align-self: center;
-          justify-self: center;
-        }
-        .StagePlayer {
-          left: 24px;
-          bottom: 24px;
-          width: 128px;
-          height: 192px;
-        }
-        .SideMapPlayer {
-          width: 128px !important;
-          height: 192px !important;
-          top: calc(50% - 96px) !important;
-        }
       </style>
       <script>
+        /*
+          Database
+        */
         const TILE_MAP = [
           [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
           [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
@@ -83,6 +64,9 @@
           [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
         ];
 
+        /*
+          API
+        */
         const api = {
           getTiles: (x, y) => {
             if (
@@ -155,12 +139,11 @@
 
   <!-- Player: Stage & Terrain (3D) -->
   <script src="../../components/Craft/StagePlayer/index.js"></script>
-  <!-- <script src="../../components/Craft/TerrainPlayer/index.js"></script> -->
 
   <!-- Application: Main -->
   <script defer>
-    const Scene = new SideMap('#Layer__0');
-    const Player = new SideMapPlayer('#Player__0');
+    const Scene = new MapScroll('#Layer__0');
+    const Player = new MapPlayer('#Player__0');
 
     register(Scene);
   </script>

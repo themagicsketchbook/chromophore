@@ -9,7 +9,7 @@ let [renderer, setRenderer] = useState();
 
 class Stage extends FixedCanvas2D {
   constructor(selector) {
-    super(selector, 'webgl');
+    super(selector, 'canvas', '', 'webgl');
 
     // Setup renderer
     renderer = setRenderer(

@@ -7,9 +7,10 @@ let [isJumping, setIsJumping] = useState(false);
 
 class SideMapPlayer extends FixedCanvas2DPlayer {
   constructor(selector) {
-    super(selector);
+    super(selector, 'div', `
+      top: calc(50% - 96px) !important;
+    `);
 
-    this.element.setAttribute('class', 'SideMapPlayer');
     this.onRender();
   }
 
