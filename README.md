@@ -1,6 +1,6 @@
 # Chromophore
 
-Chromophore is a Game Engine written in JavaScript for building 2D and 3D desktop applications.
+Chromophore is a Game Engine in development, written in JavaScript for building 2D and 3D desktop applications.
 
 * **2D & 3D Tile Maps** 
 
