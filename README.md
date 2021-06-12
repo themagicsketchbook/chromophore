@@ -19,7 +19,3 @@ Coming soon.
 ## Contributing
 
 The main purpose of this repository is to continue to evolve Chromophore, making it faster and easier to use. Development of Chromophore happens in the open on GitHub, and I am grateful to the community for contributing bugfixes and improvements.
-
-### License
-
-Chromophore is [MIT licensed](./LICENSE).
